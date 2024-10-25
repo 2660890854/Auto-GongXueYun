@@ -1,3 +1,4 @@
+
 import random, threading
 from modules.get_plan_id import get_plan_id
 from modules.get_login_token import get_token
@@ -11,7 +12,7 @@ from modules.load_config import dprint
 # 操作地时区设置
 shanghai_tz = timezone(timedelta(hours=8))
 gmt_time = datetime.now(shanghai_tz)
-现在 = datetime.now(shanghai_tz)
+now = datetime.now(shanghai_tz)
 # 以17时为分界线, 判断打卡是上班还是下班
 is_start = now.hour < 17
 # 中文映射字典, 用于控制台输出罢了
