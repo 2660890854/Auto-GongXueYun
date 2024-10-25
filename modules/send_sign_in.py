@@ -57,10 +57,10 @@ def send_sign_in(user_info, timeout):
         # 使用上海时间判断是上班还是下班
         signType = "START" if is_start else "END"
         # 检查是否已经打过卡，避免重复打卡, 不需要检查的话可以注释掉整个if块
-#        if check_sign(token, signType) and not RepeatCheckIn:
-#            dprint(f"{user_info_prefix}")
-#            print(f"已打过{sign_type_mapping[signType]}卡, 任务跳过。\n")
-#            return
+        if check_sign(token, signType) and not RepeatCheckIn:
+            dprint(f"{user_info_prefix}")
+            print(f"已打过{sign_type_mapping[signType]}卡, 任务跳过。\n")
+            return
         dprint(f"{user_info_prefix}", end="")
         print(f"准备{sign_type_mapping[signType]}打卡\n")
         # 发送请求
