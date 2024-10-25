@@ -11,7 +11,7 @@ from modules.load_config import dprint
 # 操作地时区设置
 shanghai_tz = timezone(timedelta(hours=8))
 gmt_time = datetime.now(shanghai_tz)
-now = datetime.now(shanghai_tz)
+现在 = datetime.now(shanghai_tz)
 # 以17时为分界线, 判断打卡是上班还是下班
 is_start = now.hour < 17
 # 中文映射字典, 用于控制台输出罢了
@@ -57,10 +57,10 @@ def send_sign_in(user_info, timeout):
         # 使用上海时间判断是上班还是下班
         signType = "START" if is_start else "END"
         # 检查是否已经打过卡，避免重复打卡, 不需要检查的话可以注释掉整个if块
-        if check_sign(token, signType) and not RepeatCheckIn:
-            dprint(f"{user_info_prefix}")
-            print(f"已打过{sign_type_mapping[signType]}卡, 任务跳过。\n")
-            return
+#        if check_sign(token, signType) and not RepeatCheckIn:
+#            dprint(f"{user_info_prefix}")
+#            print(f"已打过{sign_type_mapping[signType]}卡, 任务跳过。\n")
+#            return
         dprint(f"{user_info_prefix}", end="")
         print(f"准备{sign_type_mapping[signType]}打卡\n")
         # 发送请求
