@@ -20,7 +20,7 @@ sign_type_mapping = {"START": "上班", "END": "下班"}
 # 收集所有线程签到结果
 global_sign_results = []
 # 覆盖打卡，设置为True会导致每次运行都不检查签到历史从而重复签到，用于测试环境调试
-RepeatCheckIn = False
+RepeatCheckIn = True
 
 
 # 处理单个用户的签到流程, 包括获取登录令牌、签到计划 ID、检查是否已签到以及执行签到操作。
